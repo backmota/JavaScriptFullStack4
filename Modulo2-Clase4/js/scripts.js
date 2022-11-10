@@ -172,6 +172,81 @@ if(clients.includes("Monkong")){
 	console.log("No se encontre en la base de datos");
 }
 
+//Método slice()
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+//slice(begin, end) devuelve un nuevo array, que contiene una copia de una parte del array original sin modificarlo. La copia se realiza desde begin y hasta, pero sin incluir, end, índices de elementos del array original.
+
+const newClients = ["Mango", "Ajax", "Poly", "Kiwi"];
+
+console.log(newClients.slice());
+
+//Si no se especifica end, se copiará desde start hasta el final del array original.
+console.log(newClients.slice(2));
+console.log(newClients.slice(1));
+//arr.slice([inicio [, fin]])
+console.log(newClients.slice(0,3));
+//Si el valor de start es negativo y no se especifica end, se copiarán los últimos elementos start.
+console.log(newClients.slice(-3));
+console.log(newClients.slice(-2));
+
+const sliceNewClients = newClients.slice(-2);
+
+console.log(sliceNewClients);
+
+//Método splice()
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+//Navaja suiza para trabajar con matrices si es necesario modificar el array original. Borre, añada y sustituya los elementos en un lugar arbitrario del array.
+
+//Eliminación
+//Para eliminar elementos de un array, se usan dos argumentos
+
+const scores = [1, 2, 3, 4, 5];
+
+const deletedScores = scores.splice(0,3);
+
+console.log(scores);
+console.log(deletedScores);
+
+//Adición
+//Para añadir uno o más elementos a un array, se deben pasar tres o más argumentos, siendo el segundo argumento igual a cero.
+/*
+El argumento position especifica la posición inicial en el array donde se insertarán los nuevos elementos
+El segundo argumento es cero, indica al método que no elimine elementos en el punto donde se añaden nuevos elementos.
+El tercer, cuarto y todos los argumentos posteriores son nuevos elementos que se añaden al array.
+Por ejemplo, tenemos un array con nombres de colores como cadenas. Añadamos un nuevo color antes del elemento con índice 2.
+*/
+const colors = ["red", "green", "blue"];
+colors.splice(2, 0, "purple");
+console.log(colors);
+
+//Sustitución
+//Reemplazar es una operación de adición que elimina elementos en lugar de añadir otros nuevos. Requiere que se pasen al menos tres argumentos. El número de elementos a eliminar y añadir puede no ser el mismo.
+
+const lenguajes = ["C", "C++", "Java", "JavaScript"];
+lenguajes.splice(1,1, "Python");
+console.log(lenguajes);
+
+lenguajes.splice(0,3,"C#", "Swift", "Go");
+console.log(lenguajes);
+
+//Método concat()
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+const oldClients = ["Mango", "Ajax", "Poly", "Kiwi"];
+const othersClients = ["Monkong", "Singu"];
+
+const allClientsWithOldFirst = oldClients.concat(othersClients);
+console.log(allClientsWithOldFirst);
+
+const allClientsWithOtherClientsFirst = othersClients.concat(oldClients);
+console.log(allClientsWithOtherClientsFirst);
+
+const newScores = deletedScores.concat(scores);
+
+console.log(newScores);
+
+
+
+
 
 
 
