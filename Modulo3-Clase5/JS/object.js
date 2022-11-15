@@ -37,6 +37,9 @@ console.log(user);
 user.age = 28;
 console.log(user);
 
+delete user.age;
+console.log(user);
+
 let myCar = {
     make: 'Ford',
     model: 'Mustang',
