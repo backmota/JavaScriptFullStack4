@@ -86,10 +86,89 @@ const OtherMultiply = multiply;
 OtherMultiply(3,3,3);
 
 //Ámbito global
+//Las variables declaradas en el nivel más alto, es decir, fuera de cualquier construcción como if, while, for y funciones, están en el ámbito global y están disponibles en todas partes después de ser declaradas.
+
+const globalValue = 10;
+
+console.log(globalValue);
+
+function foo() {
+	const functionValue = 50;
+	console.log(globalValue);
+
+	return functionValue;
+}
+
+foo();
+let functionValue = foo();
+console.log(functionValue);
+
+/*
+for (let i = 0; i < 5; i++) {
+  const a = 20;
+  console.log(a); // 20
+
+  if (i === 2) {
+    const b = 30;
+    console.log(a); // 20
+    console.log(b); // 30
+  }
+
+  if (i === 3) {
+    console.log(a); // 20
+
+    // ❌ ¡Error! La variable b no está disponible en este ámbito
+    //console.log(b);
+  }
+}
+
+console.log(a);
+*/
+
+//Pila de llamadas
+//Cuando se llama a una función, se puede llamar a otras funciones dentro del cuerpo de la función, y se puede llamar a otras funciones en ellas, etc. JavaScript es un lenguaje de un solo hilo, lo que significa que sólo se puede ejecutar una instrucción a la vez. Esto significa que las funciones que ya han sido llamadas pero no han completado su ejecución tienen que esperar a las funciones llamadas dentro de sí mismas para continuar su trabajo.
+
+function fnA(){
+	console.log("Registro desde el interior de la función fnA antes de llamar a fnB - 2");
+	fnB();
+	console.log("Registro desde el interior de la función fnA después de llamar a fnB - 4");
+	}
 
 
+function fnB(){
+	  console.log("Registro dentro de la función fnB - 3");
+}
+
+console.log("Registro antes de llamar a fnA - 1");
+fnA();
+console.log("Registro después de llamar a fnA - 5");
+fnB();
 
 
+/*
+Pila - Es una estructura de datos que funciona según el principio LIFO (Last-In-First-Out), que significa último en entrar, primero en salir. Lo último que se añade a la pila se eliminará de ella en primer lugar, por lo que sólo se pueden añadir o eliminar elementos de la parte superior de la pila.
 
+Piensa en la pila como un array con sólo los métodos pop y push, es decir, sólo puede añadir o eliminar un elemento al final de la colección
+*/
 
+function bar(){
+	console.log("Inicia función bar");
+	console.log("Termina función bar");
 
+}
+
+function baz(){
+	console.log("Inicia función baz");
+	bar();
+	bar();
+	console.log("Termina función baz");
+}
+
+function callStack(){
+	console.log("Inicia la función - callStack");
+	bar();
+	baz();
+	console.log("Termina la función - callStack");
+}
+
+callStack();
