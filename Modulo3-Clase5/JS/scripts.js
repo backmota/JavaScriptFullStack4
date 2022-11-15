@@ -1,3 +1,6 @@
+let amount;
+let balance;
+
 function count(countFrom = 0, countTo = 10, step = 1){
 	console.log(`countFrom = ${countFrom}, countTo = ${countTo}, step = ${step}`);
 	console.log("Argumento index 3",arguments[3]);
@@ -33,6 +36,8 @@ El operador if...else es la principal forma de crear ramas. Sin embargo, las ram
 Vamos a crear una función que maneje los retiros de una cuenta bancaria personal. Recibe el importe a retirar y el saldo de la cuenta corriente, y a continuación, en función de la condición, ejecuta uno u otro bloque del código.
 */
 
+
+
 function withdraw(amount, balance){
 	console.log(amount, balance);
 	if (amount === undefined) {
@@ -58,15 +63,29 @@ function withdraw(amount, balance){
 	console.log("operación correcta");
 }
 
-let amount;
-let balance;
 
 amount = 500;
 balance = 300;
 
-withdraw(amount, balance);
 
 
+//Expresión funcional
+//Expresión de la función (function expression) es una declaración normal de una variable en donde el valor será una función. Una forma alternativa de declarar una función.
+
+//La diferencia es que una expresión funcional no puede ser llamada antes de ser creada, sólo después, porque es literalmente una declaración de una variable const.
+//multiply(2,3,6);
+
+const multiply = function (x,y,z){
+	console.log(`El resultado de la multiplicación es igual a  ${x * y * z}`);
+};
+
+multiply(2,3,6);
+
+const OtherMultiply = multiply;
+
+OtherMultiply(3,3,3);
+
+//Ámbito global
 
 
 
