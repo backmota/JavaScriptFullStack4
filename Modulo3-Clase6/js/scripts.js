@@ -215,6 +215,11 @@ const books = [
 	author: "Fiódor Dostoyevski",
 	rating: 7.75,
 	},
+	{
+	title: "Harry Potter y el aprendizaje de JavaScript",
+	author: "JKR",
+	rating: 8.75,
+	},
 ];
 
 console.log(books[1]);
@@ -242,6 +247,8 @@ for (const book of books){
 }
 //https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 const averageRating = (totalRating / books.length).toFixed(1);
+console.log(totalRating);
+console.log(books.length);
 console.log(averageRating);
 
 
