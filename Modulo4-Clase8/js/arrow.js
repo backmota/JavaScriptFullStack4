@@ -92,6 +92,33 @@ const logMessage = (number, index) => console.log(`Callback: Index ${index}, val
 numbers.forEach(logMessage);
 
 
+//Imperativo vs Declarativo
+
+//Imperativo
+const values = [1, 2, 3, 4, 5];
+const filteredNumbers = [];
+
+for (let i = 0; i < values.length; i++) {
+	if (values[i] > 3) {
+		filteredNumbers.push(values[i]);
+	} 
+}
+
+console.log(filteredNumbers);
+
+//Declarativa
+//El método filter() oculta la lógica de enumeración de la colección y llama a la función de devolución de llamada que le pasamos para cada elemento, devolviendo un array de elementos que coinciden con el criterio.
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+//const values = [1, 2, 3, 4, 5];
+
+const newValuesFilter = values.filter(value => value > 3);
+
+console.log(newValuesFilter);
+
+
+
+
+
 
 
 
