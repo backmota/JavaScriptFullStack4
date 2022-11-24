@@ -116,6 +116,26 @@ const newValuesFilter = values.filter(value => value > 3);
 console.log(newValuesFilter);
 
 
+const userA = {
+	age: 20,
+}
+
+const  userB = userA;
+
+console.log(userA.age);
+
+userB.age = 30;
+
+console.log(userA);
+
+console.log(userA.age, userB.age);
+
+console.log(userA['age']);
+console.log(userA.age);
+
+
+
+
 
 
 
