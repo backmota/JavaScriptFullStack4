@@ -47,8 +47,19 @@ así que ya sabemos que un elemento del DOM es un objeto con propiedades y méto
 //element.querySelectorAll(selector);
 
 
+const listWithId = document.querySelector('#menu');
+listWithId.style.textTransform = 'uppercase';
+listWithId.style.fontSize = '24px';
+console.log("Lista con ID",listWithId);
 
+const listWithClass = document.querySelector('.menu');
+console.log("Lista con Clase",listWithClass);
 
+const menuItemByName = document.querySelector("li");
+console.log("Item por nombre de etiqueta:",menuItemByName);
+
+const menuItemsByName = document.querySelectorAll("li");
+console.log("Items por nombre de etiqueta:",menuItemsByName);
 
 
 
