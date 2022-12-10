@@ -1,3 +1,17 @@
 body {
   margin: 24px;
 }
+
+.btn.active{
+  color: red;
+}
+
+.usernames li {
+  padding: 8px;
+  border: 2px dashed tomato;
+  text-transform: uppercase;
+}
+
+.usernames li:not(:last-child) {
+  margin-bottom: 12px;
+}
