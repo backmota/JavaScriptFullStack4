@@ -83,7 +83,25 @@ image.setAttribute("alt", "JS is Amazing");
 console.log(image.getAttribute("alt"));
 
 
+//Data-atributos
+//Permite añadir un atributo arbitrario a un tag y recuperar su valor en JavaScript. Esta función se utiliza para simplificar la escritura de código, por ejemplo, vinculando datos y marcas mediante un identificador único, especificando el tipo de acción de un botón, etc.
+//Para obtener el valor de data-atributos, se utiliza la propiedad dataset, seguida del nombre del atributo. Es decir, se descarta data- y el resto del nombre se escribe como nombre de la propiedad del objeto.
 
+const saveBtn = document.querySelector('.editor button[data-action="save"]');
+const closeBtn = document.querySelector('.editor button[data-action="close"]');
+
+console.log(saveBtn.dataset.action);
+console.log(closeBtn.dataset.action);
+
+const dishes = document .querySelectorAll(".dishes > li");
+
+dishes.forEach((dish) => {
+	dish.dataset.id = 1;
+});
+
+dishes.forEach((dish) => {
+	console.log(dish.dataset.id);
+});
 
 
 
