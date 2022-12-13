@@ -57,3 +57,33 @@ text.style.fontSize = "24px";
 text.style.textAling = "center";
 
 console.log(text.style);
+
+//Atributos
+/*
+Los elementos del DOM corresponden a los tags HTML que tienen atributos de texto. El acceso a los atributos se realiza mediante métodos estándar. Estos métodos funcionan con el valor, que se encuentra en el HTML.
+
+elem.hasAttribute(name) - Comprueba el atributo, devuelve true o false.
+elem.getAttribute(name) - Obtiene el valor del atributo y lo devuelve
+elem.setAttribute(name, value) - Establece el atributo.
+elem.removeAttribute(name) - Elimina el atributo.
+elem.attributes - propiedad, devuelve el objeto de todos los atributos del elemento.
+*/
+
+const image = document.querySelector(".image");
+//https://developer.mozilla.org/es/docs/Web/API/Element/attributes
+console.log(image.attributes);
+//https://developer.mozilla.org/es/docs/Web/API/Element/hasAttribute
+console.log(image.hasAttribute("src"));
+console.log(image.hasAttribute("href"));
+//https://developer.mozilla.org/es/docs/Web/API/Element/getAttribute
+console.log(image.getAttribute("src"));
+console.log(image.getAttribute("alt"));
+//https://developer.mozilla.org/es/docs/Web/API/Element/setAttribute
+image.setAttribute("alt", "JS is Amazing");
+console.log(image.getAttribute("alt"));
+
+
+
+
+
+
