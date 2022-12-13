@@ -37,3 +37,28 @@ const markup = technologies.map((technology) => `<li class="list-item">${technol
 console.log(markup);
 
 list.innerHTML = markup;
+
+//Método insertAdjacentHTML()
+//https://developer.mozilla.org/es/docs/Web/API/Element/insertAdjacentHTML
+
+//Un método moderno para añadir una línea de tags HTML antes, después o dentro de un elemento. Resuelve el problema del innerHTML de la re-serialización del contenido de los elementos cuando se agrega el marcado al marcado existente.
+
+
+const newTechnologies = ["GP3", "ChatGP3", "Swift"];
+
+const newCode = newTechnologies.map((technology) => `<li class="list-item">${technology}</li>`).join("");
+
+const newTechnologies2 = ["Python", "Ruby", "Java"];
+
+const newCode2 = newTechnologies2.map((technology) => `<li class="list-item">${technology}</li>`).join("");
+
+const newTechnologies3 = ["PHP", "AJAX", "Kotlin"];
+
+const newCode3 = newTechnologies3.map((technology) => `<li class="list-item">${technology}</li>`).join("");
+
+
+
+list.insertAdjacentHTML("beforeend", newCode);
+list.insertAdjacentHTML("beforebegin", newCode2);
+list.insertAdjacentHTML("afterbegin", newCode3);
+
