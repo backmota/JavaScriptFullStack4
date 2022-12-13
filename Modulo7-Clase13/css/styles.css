@@ -14,3 +14,8 @@ body {
 .is-hidden {
   display: none;
 }
+
+.accent {
+  color: tomato;
+  text-decoration: underline;
+}
