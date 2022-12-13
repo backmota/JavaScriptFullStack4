@@ -23,3 +23,17 @@ console.log(link.innerHTML);
 //La propiedad innerHTML se puede leer y escribir. Si escribe una cadena con tags HTML, el navegador analizará la cadena y las convertirá en elementos válidos y los añadirá al árbol DOM.
 
 title.innerHTML = 'Clase Número 13 de JavaScript En <span class="accent">Goit</span>';
+
+//
+
+const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+
+const list = document.querySelector(".list");
+
+console.log(list.innerHTML);
+
+const markup = technologies.map((technology) => `<li class="list-item">${technology}</li>`).join("");
+
+console.log(markup);
+
+list.innerHTML = markup;
